@@ -37,3 +37,18 @@ function submitTopic() {
 function startQuiz() {
     sendStart();
 }
+
+function showQuestion(question) {
+    document.getElementById("sign-in").style.display = "none";
+    document.getElementById("question").style.display = "block";
+    //TODO: complete
+}
+
+function answerReveal() {
+    //TODO: complete
+    document.getElementById("answer").innerHTML = "placeholder text that would otherwise show the answer";
+}
+
+function nextQuestion() {
+    //TODO: complete
+}

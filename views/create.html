@@ -21,6 +21,7 @@
             socket.emit('start');
         }
     </script>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #bd6218;">
         <a class="navbar-brand" href="/">AutoQuiz</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,17 +85,37 @@
 </div>
 </body>
 </html>
+=======
+    
+    <div id = "create-home">
+        <div id="topic-input">
+            <h4>Topic</h4>
+            <input id="search-box" />
+            <button onclick="submitTopic()">Submit</button>
+        </div>
+>>>>>>> 03d8f49dcaee2636d1df62b034dc3b109708f13b
 
-    <div id="topic-input">
-        <h4>Topic</h4>
-        <input id="search-box" />
-        <button onclick="submitTopic()">Submit</button>
+        <!--TODO: Show the key when topic is submitted-->
+        <p id="show-key"></p>
+
+        <!--Button for creator to start the quiz-->
+        <button onclick="startQuiz()">Start!</button>
     </div>
 
-    <!--TODO: Show the key when topic is submitted-->
-    <p id="show-key"></p>
-
-    <!--Button for creator to start the quiz-->
-    <button onclick="startQuiz()">Start!</button>
+    <div id = "follow-question" > <!--style="display: none"-->
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            socket.on('question', function (msg) {
+                showQuestion(msg);
+                console.log("received");
+            });
+        </script>
+        <p id = "question">Showing the question</p>
+        <button id = "answer-reveal" onclick="answerReveal()">Reveal Answer</button>
+        <button id = "next-q" onclick = "nextQuestion()">Next</button>
+        <p id = "current-question"></p>
+        <p id = "answer"></p>
+    </div>
 </body>
 
