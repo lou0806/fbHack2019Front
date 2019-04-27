@@ -84,19 +84,19 @@ function showQuestion(question) {
         document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc2").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc2").innerText, answer, "mc1");
+        checkAnswer(document.getElementById("mc2").innerText, answer, "mc2");
         document.getElementById("mc1").disabled = true
         document.getElementById("mc3").disabled = true
         document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc3").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc3").innerText, answer, "mc1");
+        checkAnswer(document.getElementById("mc3").innerText, answer, "mc3");
         document.getElementById("mc2").disabled = true
         document.getElementById("mc1").disabled = true
         document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc4").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc4").innerText, answer, "mc1");
+        checkAnswer(document.getElementById("mc4").innerText, answer, "mc4");
         document.getElementById("mc2").disabled = true
         document.getElementById("mc3").disabled = true
         document.getElementById("mc1").disabled = true
