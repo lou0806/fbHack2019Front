@@ -5,6 +5,7 @@
 var users = []
 var score = 0;
 var name = "anonymous";
+let answered = false;
 
 function submitUserInfo() {
     name = document.getElementById("user").value;
@@ -18,7 +19,7 @@ function submitUserInfo() {
 //starts the Questions on the prompt of Creator clicking Start.
 //TODO: make this true when Creator clicks Start
 //function startQuestions() {
-    //when server sends signal to start, hide div "sign-in", display div "question"
+//when server sends signal to start, hide div "sign-in", display div "question"
 //}
 
 //currently displays: "User Score", i.e. "Louis 23"
@@ -32,17 +33,22 @@ function sortFunction(a, b) {
     }
 }
 
-function triggerEndStats(){
+function triggerEndStats() {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
+<<<<<<< HEAD
     document.getElementById("ready").style.display = "none";
     document.getElementById("stats").style.display="block";
     document.getElementById("final-score").innerHTML=score;
 
+=======
+    document.getElementById("final-score").innerHTML = "Your score is " + score.toString() + ". Good job!";
+    document.getElementById("stats").style.display = "block";
+>>>>>>> 66210724fb5f9c21eb0601de0f3c9c6218456ea3
 }
 
 function sendEndStats() {
-    emitStat(name,score);
+    emitStat(name, score);
 }
 
 function publishStats(a) {
@@ -86,22 +92,22 @@ function showQuestion(question) {
         document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc2").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc2").innerText, answer, "mc1");
+        checkAnswer(document.getElementById("mc2").innerText, answer, "mc2");
         document.getElementById("mc1").disabled = true
         document.getElementById("mc3").disabled = true
         document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc3").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc3").innerText, answer, "mc1");
+        checkAnswer(document.getElementById("mc3").innerText, answer, "mc3");
         document.getElementById("mc2").disabled = true
         document.getElementById("mc1").disabled = true
-        document.getElementById("mc4").disabled = true 
+        document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc4").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc4").innerText, answer, "mc1");
+        checkAnswer(document.getElementById("mc4").innerText, answer, "mc4");
         document.getElementById("mc2").disabled = true
         document.getElementById("mc3").disabled = true
-        document.getElementById("mc1").disabled = true    
+        document.getElementById("mc1").disabled = true
     });
 }
 
@@ -114,10 +120,12 @@ function showAnswer(msg) {
 }
 
 function checkAnswer(myAnswer, answer, btnID) {
-    if (answer == myAnswer) {
+    if (answer == myAnswer && answered == false) {
         score++;
+        console.log(score);
     }
     else {
         console.log("false")
     }
+    answered = true;
 }
