@@ -31,14 +31,33 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });
+    questionIndex = 1;
     socket.on('start', function () {
         questionIndex = 0;
         if (Object.keys(allQuestions).length > questionIndex) {
-            io.sockets.emit('question', allQuestions[questionIndex][0]);
+            io.sockets.emit('question', allQuestions[questionIndex]);
             console.log("emit questions");
+            questionIndex++;
         } else {
             // go to end screen
+            io.sockets.emit('go-to-stats');
+            console.log("go to stats screen");
         }
+    })
+    socket.on('next', function () {
+        if (Object.keys(allQuestions).length > questionIndex) {
+            io.sockets.emit('question', allQuestions[questionIndex]);
+            console.log("emit questions");
+            questionIndex++;
+        } else {
+            // go to end screen
+            io.sockets.emit('go-to-stats');
+            console.log("go to stats screen");
+        }
+    })
+    socket.on('answerReveal', function () {
+        io.sockets.emit('answerShow', allQuestions[questionIndex - 1][1][0]);
+        console.log("display right answers")
     })
     socket.on('allQuestions', function (questions) {
         questions = JSON.parse(questions);

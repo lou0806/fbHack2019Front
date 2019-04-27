@@ -3,10 +3,11 @@
 
 //placeholder of users and their score, unordered
 var users = [["dude1", 12], ["dude2", 4], ["dude3", 0], ["chenyu", 54]]
+var score = 0;
+var name = "anonymous";
 
 function submitUserInfo() {
-    let userName = document.getElementById("sign-in").value;
-    console.log(userName)
+    name = document.getElementById("user").value;
 
     //send userName to server TODO
 
@@ -41,4 +42,44 @@ function displayEndStats() {
 function showQuestion(question) {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";
+    document.getElementById("current-question").innerText = question[0];
+    document.getElementById("correct-answer").innerHTML = "";
+    var min = 0;
+    var max = 4;
+    var random = Math.floor(Math.random() * (+max - +min)) + +min;
+    document.getElementById("mc1").innerText = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc2").innerText = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc3").innerText = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc4").innerText = question[1][random];
+
+    let answer = question[1][0];
+
+    document.getElementById("mc1").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc1").innerText, answer, "mc1");
+    });
+    document.getElementById("mc2").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc2").innerText, answer, "mc1");
+    });
+    document.getElementById("mc3").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc3").innerText, answer, "mc1");
+    });
+    document.getElementById("mc4").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc4").innerText, answer, "mc1");
+    });
+}
+
+function showAnswer(msg) {
+    document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
+}
+
+function checkAnswer(myAnswer, answer, btnID) {
+    if (answer == myAnswer) {
+        score++;
+    }
 }

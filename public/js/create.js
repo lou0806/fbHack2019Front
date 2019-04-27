@@ -1,5 +1,5 @@
 function submitTopic() {
-    let topic = document.getElementById("search-box").value;
+    let topic = document.getElementById("topic").value;
     console.log(topic)
 
     // send topic to backend
@@ -35,20 +35,33 @@ function submitTopic() {
 }
 
 function startQuiz() {
+    document.getElementById("input_topic").style.display = "none";
     sendStart();
 }
 
 function showQuestion(question) {
-    document.getElementById("sign-in").style.display = "none";
-    document.getElementById("question").style.display = "block";
-    //TODO: complete
+    document.getElementById("create-home").style.display = "none";
+    document.getElementById("follow-question").style.display = "block";
+    //TODO: TEST
+    document.getElementById("current-question").innerHTML = question[0];
+    document.getElementById("answer").innerHTML = "";
 }
 
 function answerReveal() {
-    //TODO: complete
-    document.getElementById("answer").innerHTML = "placeholder text that would otherwise show the answer";
+    //TODO: test
+    sendAnswer();
+}
+
+function showAnswer(msg) {
+    document.getElementById("answer").innerHTML = 'The answer is: ' + msg;
 }
 
 function nextQuestion() {
-    //TODO: complete
+    //TODO: test
+    sendNext();
+}
+
+// Opens the END STATS BAR
+function goToStats() {
+    //TODO: Complete
 }

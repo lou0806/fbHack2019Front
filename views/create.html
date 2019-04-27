@@ -21,7 +21,37 @@
         function sendStart() {
             socket.emit('start');
         }
+        function sendNext() {
+            socket.emit('next');
+        }
+        function sendAnswer() {
+            socket.emit('answerReveal')
+            console.log("answers being sent out")
+        }
     </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('question', function (msg) {
+            showQuestion(msg);
+            console.log("received");
+        });
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('answerShow', function(msg) {
+            showAnswer(msg);
+        });
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('go-to-stats', function () {
+            goToStats();
+        });
+    </script>
+
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #bd6218;">
         <a class="navbar-brand" href="/">AutoQuiz</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -56,40 +86,64 @@
             </p>
         </div>
     </div>
-
-    <!--
-<div id="topic-input">
-        <h4>Topic</h4>
-        <input id="search-box" />
-        <button onclick="submitTopic()">Submit</button>
+    <div id="input_topic">
+        <div id="create-home" class="container-fluid d-flex h-100 flex-column">
+            <div class="row" id="topic-input">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form action="submitTopic()"></form>
+                        <fieldset class="form-group">
+                            <h3>
+                                <label for="Topic">Topic Name:</label>
+                            </h3>
+                            <input id="topic" type="text" class="form-control" name="Topic">
+                        </fieldset>
+                        <button type="button" class="btn btn-block btn-lg" style="background-color: coral" onclick="submitTopic()">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!--TODO: Show the key when topic is submitted-->
+                <p id="show-key"></p>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <button onclick="startQuiz()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Start!</button>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div id="show-key">
-        <p></p>
-</div>
--->
 
-    <div class="container-fluid d-flex h-100 flex-column">
+    <div id="follow-question" style="display:none !important" class="container-fluid d-flex h-100 flex-column text-center">
+        <!--style="display: none" TODO: add this to above div later-->
+        
+        <p id="current-question"></p>
+        <p id="answer"></p>
+
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
-                <form action="/html/tags/html_form_tag_action.cfm">
-                    <fieldset class="form-group">
-                        <h3>
-                            <label for="Topic">Topic Name:</label>
-                        </h3>
-                        <input type="text" class="form-control" id="topic" name="Topic">
-                    </fieldset>
-                    <button type="button" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
-                </form>
+                <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>
             </div>
+        </div>
+        <br>
+        <div class="row">
             <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button id="next-q" onclick="nextQuestion()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Next!</button>
+            </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
-
+<!--
 <div id="create-home">
     <div id="topic-input">
         <h4>Topic</h4>
@@ -97,15 +151,15 @@
         <button onclick="submitTopic()">Submit</button>
     </div>
 
-    <!--TODO: Show the key when topic is submitted-->
+    TODO: Show the key when topic is submitted
     <p id="show-key"></p>
 
-    <!--Button for creator to start the quiz-->
+    Button for creator to start the quiz
     <button onclick="startQuiz()">Start!</button>
 </div>
 
 <div id="follow-question">
-    <!--style="display: none"-->
+    style="display: none"
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
@@ -120,4 +174,4 @@
     <p id="current-question"></p>
     <p id="answer"></p>
 </div>
-</body>
+</body>-->
