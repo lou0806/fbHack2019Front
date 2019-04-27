@@ -34,7 +34,7 @@ io.on('connection', function (socket) {
     socket.on('start', function () {
         questionIndex = 0;
         if (Object.keys(allQuestions).length > questionIndex) {
-            io.sockets.emit('question', allQuestions[questionIndex][0]);
+            io.sockets.emit('question', allQuestions[questionIndex]);
             console.log("emit questions");
             questionIndex++;
         } else {
@@ -45,7 +45,7 @@ io.on('connection', function (socket) {
     })
     socket.on('next', function () {
         if (Object.keys(allQuestions).length > questionIndex) {
-            io.sockets.emit('question', allQuestions[questionIndex][0]);
+            io.sockets.emit('question', allQuestions[questionIndex]);
             console.log("emit questions");
             questionIndex++;
         } else {
@@ -54,8 +54,8 @@ io.on('connection', function (socket) {
             console.log("go to stats screen");
         }
     })
-    socket.on('answerReveal', function() {
-        io.sockets.emit('answerShow',allQuestions[questionIndex-1][1][0]);
+    socket.on('answerReveal', function () {
+        io.sockets.emit('answerShow', allQuestions[questionIndex - 1][1][0]);
         console.log("display right answers")
     })
     socket.on('allQuestions', function (questions) {

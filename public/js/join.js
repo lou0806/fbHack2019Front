@@ -41,8 +41,9 @@ function displayEndStats() {
 function showQuestion(question) {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";
-    document.getElementById("current-question").innerText = question;
+    document.getElementById("current-question").innerText = question[0];
     document.getElementById("correct-answer").innerHTML = "";
+    // document.getElementById("mc1").innerHTML = "";
 }
 
 function showAnswer(msg) {
