@@ -86,12 +86,43 @@
     </div>
 
 <div id="question" style="display: none">
-    <h>This section is the QUESTION screen</h>
-    <img>
-    <h>Question:</h>
-    <!--TODO: Link the generated question here-->
-    <p id = "current-question"></p>
-    <h>Answer</h>    
+    <div class = "jumbotron text-center">
+        <img>
+        <h2>Question:</h2>
+        <!--TODO: Link the generated question here-->
+        <p id = "current-question"></p>            
+    </div>
+    <h>Answer</h> 
+    <div class="container-fluid d-flex h-100 flex-column">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>    
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>    
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>    
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>    
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
     <input id="answer-input">
     <button>Submit</button>
     <!--Answer: shows correct answer after timer runs out-->
