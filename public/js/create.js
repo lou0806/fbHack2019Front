@@ -8,12 +8,13 @@ function submitTopic() {
         topic: topic
     }
 
-    $.post(url, data, function (data, status) {
-        console.log('${data} and status is ${status}')
-    });
+    // $.post(url, data, function (data, status) {
+    //     console.log('${data} and status is ${status}')
+    // });
 
-    // xhttp.open("POST", url, data);
-    // xhttp.send();
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", url, data);
+    xhttp.send();
 
     // generate room key
     function makeid(length) {
