@@ -4,11 +4,6 @@ function submitTopic() {
 
     // send topic to backend
     const url = 'https://auto-quiz-backend.herokuapp.com/';
-    // const data = {
-    //     topic: topic
-    // }
-
-    // data = JSON.parse(data);
 
     const data = "Jackie Chan";
 
@@ -24,7 +19,7 @@ function submitTopic() {
     xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
-        topic: "Jackie Chan"
+        topic: topic
     }));
 
     // generate room key
