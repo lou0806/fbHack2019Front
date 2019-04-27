@@ -100,7 +100,11 @@ function showQuestion(question) {
 }
 
 function showAnswer(msg) {
-    document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
+    document.getElementById("mc1").disabled = true
+    document.getElementById("mc2").disabled = true
+    document.getElementById("mc3").disabled = true
+    document.getElementById("mc4").disabled = true
+    document.getElementById("correct-answer").innerHTML = "The correct answer is: " + msg;
 }
 
 function checkAnswer(myAnswer, answer, btnID) {
