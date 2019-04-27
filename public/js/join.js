@@ -47,3 +47,7 @@ function showQuestion(question) {
 function showAnswer(msg) {
     document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
 }
+
+function checkCorrect () {
+    
+}
