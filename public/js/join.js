@@ -43,7 +43,19 @@ function showQuestion(question) {
     document.getElementById("question").style.display = "block";
     document.getElementById("current-question").innerText = question[0];
     document.getElementById("correct-answer").innerHTML = "";
-    // document.getElementById("mc1").innerHTML = "";
+    var min = 0;
+    var max = 4;
+    var random = Math.floor(Math.random() * (+max - +min)) + +min;
+    document.getElementById("mc1").innerHTML = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc2").innerHTML = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc3").innerHTML = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc4").innerHTML = question[1][random];
 }
 
 function showAnswer(msg) {
