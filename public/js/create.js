@@ -35,6 +35,7 @@ function submitTopic() {
 }
 
 function startQuiz() {
+    document.getElementById("input_topic").style.display = "none";
     sendStart();
 }
 
