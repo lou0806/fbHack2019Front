@@ -11,8 +11,14 @@ function submitTopic() {
     xhr.send(JSON.stringify({
         topic: topic
     }));
-
-    sendQuestions("questions");
+    xhr.onreadystatechange = function () {
+        // If the request completed, close the extension popup
+        if (xhr.readyState == 4)
+            if (xhr.status == 200) {
+                var json_data = xhr.responseText;
+                sendQuestions(json_data);
+            }
+    };
 
     // generate room key
     function makeid(length) {
