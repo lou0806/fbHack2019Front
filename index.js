@@ -33,6 +33,7 @@ io.on('connection', function (socket) {
     });
     questionIndex = 1;
     socket.on('start', function () {
+        console.log("START");
         questionIndex = 0;
         if (Object.keys(allQuestions).length > questionIndex) {
             io.sockets.emit('question', allQuestions[questionIndex]);
@@ -45,6 +46,7 @@ io.on('connection', function (socket) {
         }
     })
     socket.on('next', function () {
+        console.log("NEXT");
         if (Object.keys(allQuestions).length > questionIndex) {
             io.sockets.emit('question', allQuestions[questionIndex]);
             console.log("emit questions");
@@ -66,13 +68,13 @@ io.on('connection', function (socket) {
         storeQuestions(questions)
     });
     users = [];
-    socket.on('userScore', function(arrUser) {
+    socket.on('userScore', function (arrUser) {
         console.log("qniorqwnioerqwnio")
         users.push(arrUser);
         console.log(arrUser);
     })
-    socket.on('publishScores',function(){
-        io.sockets.emit('publishedScores',users);
+    socket.on('publishScores', function () {
+        io.sockets.emit('publishedScores', users);
     })
 });
 

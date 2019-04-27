@@ -75,7 +75,7 @@ function showQuestion(question) {
     random = random % 4;
     document.getElementById("mc4").innerText = question[1][random];
 
-    let answer = question[1][0];
+    var answer = question[1][0];
 
     document.getElementById("mc1").addEventListener("click", function () {
         checkAnswer(document.getElementById("mc1").innerText, answer, "mc1");
@@ -112,12 +112,17 @@ function showAnswer(msg) {
 }
 
 function checkAnswer(myAnswer, answer, btnID) {
+    console.log("********");
+    console.log(btnID);
+    console.log(myAnswer);
+    console.log(answer);
     if (answer == myAnswer && answered == false) {
         score++;
         console.log(score);
+        answered = true;
     }
     else {
         console.log("false")
     }
-    answered = true;
+
 }
