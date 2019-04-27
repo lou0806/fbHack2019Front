@@ -21,18 +21,36 @@
             socket.emit('start');
         }
     </script>
+    
+    <div id = "create-home">
+        <div id="topic-input">
+            <h4>Topic</h4>
+            <input id="search-box" />
+            <button onclick="submitTopic()">Submit</button>
+        </div>
 
-    <div id="topic-input">
-        <h4>Topic</h4>
-        <input id="search-box" />
-        <button onclick="submitTopic()">Submit</button>
+        <!--TODO: Show the key when topic is submitted-->
+        <p id="show-key"></p>
+
+        <!--Button for creator to start the quiz-->
+        <button onclick="startQuiz()">Start!</button>
     </div>
 
-    <!--TODO: Show the key when topic is submitted-->
-    <p id="show-key"></p>
-
-    <!--Button for creator to start the quiz-->
-    <button onclick="startQuiz()">Start!</button>
+    <div id = "follow-question" > <!--style="display: none"-->
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+            socket.on('question', function (msg) {
+                showQuestion(msg);
+                console.log("received");
+            });
+        </script>
+        <p id = "question">Showing the question</p>
+        <button id = "answer-reveal" onclick="answerReveal()">Reveal Answer</button>
+        <button id = "next-q" onclick = "nextQuestion()">Next</button>
+        <p id = "current-question"></p>
+        <p id = "answer"></p>
+    </div>
 </body>
 
 </html>
