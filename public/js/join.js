@@ -44,6 +44,6 @@ function showQuestion(question) {
     document.getElementById("current-question").innerText = question;
 }
 
-function showAnswer(msg) { 
-    document.getElementById("correct-input").innerHTML="The correct answer is:" + msg;
+function showAnswer(msg) {
+    document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
 }
