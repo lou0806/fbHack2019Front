@@ -12,6 +12,9 @@ function submitTopic() {
         console.log('${data} and status is ${status}')
     });
 
+    // xhttp.open("POST", url, data);
+    // xhttp.send();
+
     // generate room key
     function makeid(length) {
         var result = '';
