@@ -42,6 +42,7 @@ function showQuestion(question) {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";
     document.getElementById("current-question").innerText = question;
+    document.getElementById("correct-answer").innerHTML = "";
 }
 
 function showAnswer(msg) {

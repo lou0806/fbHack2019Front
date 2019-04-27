@@ -44,6 +44,7 @@ function showQuestion(question) {
     document.getElementById("follow-question").style.display = "block";
     //TODO: TEST
     document.getElementById("current-question").innerHTML = question;
+    document.getElementById("answer").innerHTML = "";
 }
 
 function answerReveal() {
