@@ -82,7 +82,10 @@
                     </fieldset>
                     <button type="button" class="btn btn-block btn-lg" style="background-color: coral" onclick="submitTopic()">Submit</button>
                 </form>
-            </div>            
+            </div>    
+        </div>
+        <br>
+        <div class = "row">
             <!--TODO: Show the key when topic is submitted-->
             <p id="show-key"></p>
             <div class="col-sm-3"></div>
@@ -93,8 +96,8 @@
         </div>
     </div>
 
-    <div class="container-fluid d-flex h-100 flex-column" id="follow-question">
-        <!--style="display: none"-->
+    <div class="container-fluid d-flex h-100 flex-column" id="follow-question" style="display: none">
+        <!--style="display: none" TODO: add this to above div later-->
         <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io();
@@ -103,9 +106,28 @@
                 console.log("received");
             });
         </script>
+
         <p id="question">Showing the question</p>
-        <button id="answer-reveal" onclick="answerReveal()">Reveal Answer</button>
-        <button id="next-q" onclick="nextQuestion()">Next</button>
+        
+        <div class = "row">
+            <!--TODO: Show the key when topic is submitted-->
+            <p id="show-key"></p>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <br>
+        <div class = "row">
+            <!--TODO: Show the key when topic is submitted-->
+            <p id="show-key"></p>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button id="next-q" onclick="nextQuestion()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Next!</button>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
         <p id="current-question"></p>
         <p id="answer"></p>
     </div>

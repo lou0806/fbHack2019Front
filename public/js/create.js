@@ -39,8 +39,8 @@ function startQuiz() {
 }
 
 function showQuestion(question) {
-    document.getElementById("sign-in").style.display = "none";
-    document.getElementById("question").style.display = "block";
+    document.getElementById("create-home").style.display = "none";
+    document.getElementById("follow-question").style.display = "block";
     //TODO: complete
 }
 
