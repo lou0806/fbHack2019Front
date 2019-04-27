@@ -2,7 +2,7 @@
 //sends user info to server
 
 //placeholder of users and their score, unordered
-var users = [["dude1", 12], ["dude2", 4], ["dude3", 0], ["chenyu", 54]]
+var users = []
 
 function submitUserInfo() {
     let userName = document.getElementById("sign-in").value;
@@ -14,9 +14,9 @@ function submitUserInfo() {
 
 //starts the Questions on the prompt of Creator clicking Start.
 //TODO: make this true when Creator clicks Start
-function startQuestions() {
+//function startQuestions() {
     //when server sends signal to start, hide div "sign-in", display div "question"
-}
+//}
 
 //currently displays: "User Score", i.e. "Louis 23"
 //Orders list
@@ -47,8 +47,4 @@ function showQuestion(question) {
 
 function showAnswer(msg) {
     document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
-}
-
-function checkCorrect () {
-    
 }
