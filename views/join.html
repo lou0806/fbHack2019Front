@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Auto Quiz User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <script src="main.js"></script>
     <script src="/public/js/join.js"></script>
 </head>
 
@@ -16,16 +18,16 @@
         var socket = io();
         socket.on('question', function (msg) {
             showQuestion(msg);
-            console.log("received");
         });
     </script>
 
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #bd6218;">
         <a class="navbar-brand" href="/">AutoQuiz</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -35,52 +37,55 @@
                     <a class="nav-link" href="/create">Create</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/join">Join <span class="sr-only">(current)</span></a>
-                </li>    
+                    <a class="nav-link active" href="/join">Join
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
 
-<div id="sign-in">
-    <div class="container-fluid d-flex h-100 flex-column">
-        <div class="jumbotron text-center">
-            <h1>
-                Join a Room
-            </h1>
-            <p>
-                Type in the room key to join the quiz!
-            </p>
+    <div id="sign-in">
+        <div class="container-fluid d-flex h-100 flex-column">
+            <div class="jumbotron text-center">
+                <h1>
+                    Join a Room
+                </h1>
+                <p>
+                    Type in the room key to join the quiz!
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid d-flex h-100 flex-column">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form action="/html/tags/html_form_tag_action.cfm">
+                        <fieldset class="form-group">
+                            <label for="user">Username:</label>
+                            <input type="text" class="form-control" id="user" name="user">
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form action="/html/tags/html_form_tag_action.cfm">
+                        <fieldset class="form-group">
+                            <label for="key">Room Key:</label>
+                            <input type="text" class="form-control" id="key" name="key">
+                        </fieldset>
+                        <button type="button" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
         </div>
     </div>
-    <div class="container-fluid d-flex h-100 flex-column">
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <form action="/html/tags/html_form_tag_action.cfm">
-                    <fieldset class="form-group">
-                    <label for="user">Username:</label>
-                    <input type="text" class="form-control" id="user" name="user">
-                    </fieldset>
-                </form>            
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <form action="/html/tags/html_form_tag_action.cfm">
-                    <fieldset class="form-group">
-                    <label for="key">Room Key:</label>
-                    <input type="text" class="form-control" id="key" name="key">
-                    </fieldset>
-                    <button type="button" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
-                </form>            
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-    </div>
-</div>
 
+<<<<<<< HEAD
 <div id="question" style="display: none">
     <h>This section is the QUESTION screen</h>
     <img>
@@ -95,8 +100,33 @@
     <!--Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
     <p id="answer-stats"></p>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+=======
+    <div id="question" style="display: none">
+        <h>This section is the QUESTION screen</h>
+        <img>
+        <h>Question:</h>
+        <!--TODO: Link the generated question here-->
+        <p id="current-question"></p>
+        <h>Answer</h>
+        <input id="answer-input">
+        <button>Submit</button>
+        <!--Answer: shows correct answer after timer runs out-->
+        <p id="correct-answer"></p>
+        <!--Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
+        <p id="answer-stats"></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+>>>>>>> ae899a3cfd1eafc0a8478a54b9cf94b2077421be
 </body>
+
 </html>
 
 
@@ -116,8 +146,8 @@
 <button>Submit</button>
 
     <!-       *****************SIGN IN*********************-->
-    <!--TODO: Pass the get-name input to the server to add a user-->
-    <!---
+<!--TODO: Pass the get-name input to the server to add a user-->
+<!---
     <div id="sign-in">
         <h>This section is the SIGN IN screen</h>
         <h>
@@ -131,39 +161,56 @@
         <button>Submit</button>   
 
         <!-Show 'connected' when connected to a quiz-->
-    <!--
+<!--
         <p id="check-connect"></p>
     </div>
 
     <!-*************QUESTIONS***********************-->
-    <!-- Questions are displayed, answered, and changed here-->
-    
-    <!--
+<!-- Questions are displayed, answered, and changed here-->
+
+<!--
     <div id="question" style="display: none">
         <h>This section is the QUESTION screen</h>
         <img>
         <h>Question:</h>
-        <!--TODO: Link the generated question here-->
+<<<<<<< HEAD
+        <!-TODO: Link the generated question here-->
     <!--
+=======
+        <!--TODO: Link the generated question here-->
+<!--
+>>>>>>> ae899a3cfd1eafc0a8478a54b9cf94b2077421be
         <p id = "current-question"></p>
 
         <h>Answer</h>
         <!-TODO: Link the answer. After timer runs out OR everyone has submitted, display answer-->
-        <!--
+<!--
         <input id="answer-input">
         <button>Submit</button>
-        <!--Answer: shows correct answer after timer runs out-->
+<<<<<<< HEAD
+        <!-Answer: shows correct answer after timer runs out-->
         <!--
+=======
+        <!--Answer: shows correct answer after timer runs out-->
+<!--
+>>>>>>> ae899a3cfd1eafc0a8478a54b9cf94b2077421be
         <p id="correct-answer"></p>
 
         <!-Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
-        <!-- <p id="answer-stats"></p> -->
-    <!--</div>
+<!-- <p id="answer-stats"></p> -->
+<!--</div>
 
-    <!--*************FINAL STATS/RESULTS***********************-->
+<<<<<<< HEAD
+    <!-*************FINAL STATS/RESULTS***********************-->
     <!--After questions are completed, show stats from a list-->
     <!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
     <!--
+=======
+    <!--*************FINAL STATS/RESULTS***********************-->
+<!--After questions are completed, show stats from a list-->
+<!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
+<!--
+>>>>>>> ae899a3cfd1eafc0a8478a54b9cf94b2077421be
     <div id="stats" style="display: none">
         <h>This section is the FINAL STATS screen</h>
         <br>
