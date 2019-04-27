@@ -80,7 +80,6 @@ function showAnswer(msg) {
 
 function checkAnswer(myAnswer, answer, btnID) {
     if (answer == myAnswer) {
-        console.log("true");
         score++;
     }
 }
