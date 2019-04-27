@@ -41,10 +41,40 @@ function displayEndStats() {
 function showQuestion(question) {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";
-    document.getElementById("current-question").innerText = question;
+    document.getElementById("current-question").innerText = question[0];
     document.getElementById("correct-answer").innerHTML = "";
+    var min = 0;
+    var max = 4;
+    var random = Math.floor(Math.random() * (+max - +min)) + +min;
+    document.getElementById("mc1").innerText = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc2").innerText = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc3").innerText = question[1][random];
+    random++;
+    random = random % 4;
+    document.getElementById("mc4").innerText = question[1][random];
+
+    document.getElementById("mc1").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc1").innerText);
+    });
+    document.getElementById("mc2").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc2").innerText);
+    });
+    document.getElementById("mc3").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc3").innerText);
+    });
+    document.getElementById("mc4").addEventListener("click", function () {
+        checkAnswer(document.getElementById("mc4").innerText);
+    });
 }
 
 function showAnswer(msg) {
     document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
+}
+
+function checkAnswer(answer) {
+    console.log(answer);
 }
