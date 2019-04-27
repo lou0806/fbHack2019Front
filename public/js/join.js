@@ -2,7 +2,7 @@
 //sends user info to server
 
 //placeholder of users and their score, unordered
-var users = [["dude1", 12], ["dude2", 4], ["dude3", 0], ["chenyu", 54]]
+var users = []
 var score = 0;
 var name = "anonymous";
 
@@ -42,9 +42,9 @@ function sendEndStats() {
 
 function publishStats(a) {
     b = a.sort(sortFunction)
-    for (var i = 0; i < users.length; i++) {
-        nameList = "<li>" + users[i] + "<\i>"
-        document.getElementById("final-list").innerHTML += "<li>" + users[i][0] + " " + users[i][1] + "</li>";
+    for (var i = 0; i < b.length; i++) {
+        nameList = "<li>" + b[i] + "<\i>"
+        document.getElementById("final-list").innerHTML += "<li>" + b[i][0] + " " + b[i][1] + "</li>";
     }
 }
 
