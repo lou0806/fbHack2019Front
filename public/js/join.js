@@ -3,10 +3,11 @@
 
 //placeholder of users and their score, unordered
 var users = [["dude1", 12], ["dude2", 4], ["dude3", 0], ["chenyu", 54]]
+var score = 0;
+var name = "anonymous";
 
 function submitUserInfo() {
-    let userName = document.getElementById("sign-in").value;
-    console.log(userName)
+    name = document.getElementById("user").value;
 
     //send userName to server TODO
 
@@ -14,9 +15,9 @@ function submitUserInfo() {
 
 //starts the Questions on the prompt of Creator clicking Start.
 //TODO: make this true when Creator clicks Start
-function startQuestions() {
+//function startQuestions() {
     //when server sends signal to start, hide div "sign-in", display div "question"
-}
+//}
 
 //currently displays: "User Score", i.e. "Louis 23"
 //Orders list
@@ -29,12 +30,21 @@ function sortFunction(a, b) {
     }
 }
 
-function displayEndStats() {
-    //orders users, passes them back
-    users.sort(sortFunction);
+function triggerEndStats(){
+    document.getElementById("sign-in").style.display = "none";
+    document.getElementById("question").style.display = "none";
+    document.getElementById("stats").style.display="block";
+}
+
+function sendEndStats() {
+    emitStat(name,score);
+}
+
+function publishStats(a) {
+    b = a.sort(sortFunction)
     for (var i = 0; i < users.length; i++) {
         nameList = "<li>" + users[i] + "<\i>"
-        document.getElementById("final-stats").innerHTML += "<li>" + users[i][0] + " " + users[i][1] + "</li>";
+        document.getElementById("final-list").innerHTML += "<li>" + users[i][0] + " " + users[i][1] + "</li>";
     }
 }
 
@@ -95,7 +105,7 @@ function showAnswer(msg) {
 
 function checkAnswer(myAnswer, answer, btnID) {
     if (answer == myAnswer) {
-        console.log("true");
+        score++;
     }
     else {
         console.log("false")

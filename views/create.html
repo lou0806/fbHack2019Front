@@ -28,6 +28,10 @@
             socket.emit('answerReveal')
             console.log("answers being sent out")
         }
+        function publishStats() {
+            socket.emit('publishScores')
+            console.log("answers are to be published")
+        }
     </script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -49,6 +53,7 @@
         var socket = io();
         socket.on('go-to-stats', function () {
             goToStats();
+            console.log("received to go to stats");
         });
     </script>
 
@@ -140,6 +145,11 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<div>
+    <div id="stats" style="display:none">
+        <button id="statButt" onclick="publishStats()">Click it</button>
+    </div>
+</div>
 </body>
 
 </html>
@@ -174,4 +184,4 @@
     <p id="current-question"></p>
     <p id="answer"></p>
 </div>
-</body>-->
+</body>--

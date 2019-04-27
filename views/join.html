@@ -16,6 +16,16 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on('publishedScores', function (userArray) {
+            publishStats(userArray);
+        });
+        function emitStat(name, score){
+            socket.emit('userScore', [name,score]);
+        }
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
         socket.on('question', function (msg) {
             showQuestion(msg);
         });
@@ -24,6 +34,12 @@
         var socket = io();
         socket.on('answerShow', function (ans) {
             showAnswer(ans);
+        });
+    </script>
+    <script>
+        var socket = io();
+        socket.on('go-to-stats', function() {
+            triggerEndStats()
         });
     </script>
 
@@ -55,18 +71,15 @@
         <div class="container-fluid d-flex h-100 flex-column">
             <div class="jumbotron text-center">
                 <h1>
-                    Join a Room
+                    Waiting for host
                 </h1>
-                <p>
-                    Type in the room key to join the quiz!
-                </p>
             </div>
         </div>
         <div class="container-fluid d-flex h-100 flex-column">
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <form action="/html/tags/html_form_tag_action.cfm"></form>
+                    <form action="/html/tags/html_form_tag_action.cfm">
                         <fieldset class="form-group">
                             <label for="user">Username:</label>
                             <input type="text" class="form-control" id="user" name="user">
@@ -79,11 +92,7 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
                     <form action="/html/tags/html_form_tag_action.cfm">
-                        <fieldset class="form-group">
-                            <label for="key">Room Key:</label>
-                            <input type="text" class="form-control" id="key" name="key">
-                        </fieldset>
-                        <button type="button" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
+                        <button type="button" onclick="submitUserInfo()" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
                     </form>
                 </div>
                 <div class="col-sm-3"></div>
@@ -94,7 +103,7 @@
     <div id="question" style="display: none">
         <div class="jumbotron text-center">
             <img>
-            <h1>Question:</h1>
+            <h2>Question:</h2>
             <!--TODO: Link the generated question here-->
             <p id="current-question"></p>
         </div>
@@ -131,7 +140,6 @@
                 <div class="col-sm-3"></div>
             </div>
         </div>
-        <!--Answer: shows correct answer after timer runs out-->
         <p id="correct-answer"></p>
         <!--Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
         <p id="answer-stats"></p>
@@ -142,6 +150,15 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <div id="stats" style="display: none">
+        <h>This section is the FINAL STATS screen</h>
+        <br>
+        <p id="final-score"></p>
+        <button onclick="sendEndStats()">Send your score</button>
+        <div id="final-list">
+            <ul></ul>
+    </div>
 </body>
 
 </html>
