@@ -42,7 +42,7 @@ function showQuestion(question) {
     document.getElementById("create-home").style.display = "none";
     document.getElementById("follow-question").style.display = "block";
     //TODO: TEST
-    document.getElementById("current-question").innerHTML = question[0];
+    document.getElementById("current-question").innerHTML = question;
 }
 
 function answerReveal() {
