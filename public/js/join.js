@@ -5,7 +5,7 @@
 var users = []
 var score = 0;
 var name = "anonymous";
-let answered = false;
+var answered;
 
 function submitUserInfo() {
     name = document.getElementById("user").value;
