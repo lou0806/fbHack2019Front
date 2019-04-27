@@ -9,7 +9,9 @@ let answered = false;
 
 function submitUserInfo() {
     name = document.getElementById("user").value;
-
+    document.getElementById("sign-in").style.display = "none";
+    document.getElementById("ready").style.display = "block";
+    document.getElementById("name").innerHTML = name;
     //send userName to server TODO
 
 }
@@ -20,7 +22,7 @@ function submitUserInfo() {
 //when server sends signal to start, hide div "sign-in", display div "question"
 //}
 
-//currently displays: "User Score", i.e. "Louis 23"
+//currently displays: "User Score", i.e. "Louis 0"
 //Orders list
 function sortFunction(a, b) {
     if (a[1] === b[1]) {
@@ -34,11 +36,14 @@ function sortFunction(a, b) {
 function triggerEndStats() {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
-    document.getElementById("final-score").innerHTML = "Your score is " + score.toString() + ". Good job!";
-    document.getElementById("stats").style.display = "block";
+    document.getElementById("ready").style.display = "none";
+    document.getElementById("stats").style.display="block";
+    document.getElementById("final-score").innerHTML=score;
+
 }
 
 function sendEndStats() {
+    document.getElementById("buttonstats").disabled = true;
     emitStat(name, score);
 }
 
@@ -51,8 +56,7 @@ function publishStats(a) {
 }
 
 function showQuestion(question) {
-    answered = false;
-
+    document.getElementById("ready").style.display = "none";
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";
     document.getElementById("current-question").innerText = question[0];

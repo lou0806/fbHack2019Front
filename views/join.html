@@ -75,11 +75,11 @@
                 </h1>
             </div>
         </div>
-        <div class="container-fluid d-flex h-100 flex-column">
+        <div class="container-fluid d-flex h-100 flex-column" id="login">
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <form action="/html/tags/html_form_tag_action.cfm">
+                    <form action="/html/tags/html_form_tag_action.cfm"></form>
                         <fieldset class="form-group">
                             <label for="user">Username:</label>
                             <input type="text" class="form-control" id="user" name="user">
@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <form action="/html/tags/html_form_tag_action.cfm">
+                    <form action="/html/tags/html_form_tag_action.cfm"></form>
                         <button type="button" onclick="submitUserInfo()" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
                     </form>
                 </div>
@@ -100,7 +100,7 @@
         </div>
     </div>
 
-    <div id="question" style="display: none">
+    <div id="question" style="display:none">
         <div class="jumbotron text-center">
             <img>
             <h2>Question:</h2>
@@ -154,13 +154,44 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+    <div id="ready" style="display: none">
+    <div class="container-fluid d-flex h-100 flex-column">
+        <div class="jumbotron text-center">
+            <h1>
+                Waiting for host
+            </h1>
+        </div>
+    </div>
+    <div class="container-fluid d-flex h-100 flex-column">
+        <div class="text-center">
+            <h5>Welcome</h5> <h5 id = "name"></h5><h5> We will be starting shortly</h5>
+        </div>
+    </div>
+    </div>
+
     <div id="stats" style="display: none">
-        <h>This section is the FINAL STATS screen</h>
+        <div class="jumbotron text-center">
+            <img>
+            <h1>Final Score</h1>
+            <!--TODO: Link the generated question here-->
+            <h6 id="final-score"></h6>
+        </div>
         <br>
-        <p id="final-score"></p>
-        <button onclick="sendEndStats()">Send your score</button>
-        <div id="final-list">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <button onclick="sendEndStats()" id="buttonstats" type="button" class="btn btn-block btn-lg" style="background-color: coral">Send your score!</button>
+            </div>
+        </div>    
+        <br>
+        <div class="row text-center">
+        <div class="col-sm-12">   
+        <h6 id="final-list"></h6>
             <ul></ul>
+        </h6>
+        </div> 
+        </div>
+        </div>
     </div>
 </body>
 
