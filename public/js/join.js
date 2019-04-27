@@ -122,7 +122,7 @@ function checkAnswer(myAnswer, answer, btnID) {
     console.log(myAnswer);
     console.log(answer);
     console.log(answered);
-    if (answer == myAnswer && answered == false) {
+    if (answer.trim() == myAnswer && answered == false) {
         score++;
         console.log(score);
         answered = true;
