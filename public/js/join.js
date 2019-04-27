@@ -33,8 +33,8 @@ function sortFunction(a, b) {
 function triggerEndStats(){
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
+    document.getElementById("final-score").innerHTML="Your score is " + score.toString() + ". Good job!";
     document.getElementById("stats").style.display="block";
-    document.getElementById("final-score").style.innerHTML=name;
 }
 
 function sendEndStats() {
