@@ -34,13 +34,8 @@ function sortFunction(a, b) {
 function triggerEndStats() {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
-<<<<<<< HEAD
-    document.getElementById("final-score").innerHTML="Your score is " + score.toString() + ". Good job!";
-    document.getElementById("stats").style.display="block";
-=======
+    document.getElementById("final-score").innerHTML = "Your score is " + score.toString() + ". Good job!";
     document.getElementById("stats").style.display = "block";
-    document.getElementById("final-score").style.innerHTML = name;
->>>>>>> 50c85860c8f789e390b5bc9446eb1227332f48ca
 }
 
 function sendEndStats() {
