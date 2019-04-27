@@ -18,13 +18,19 @@ app.get('/join', function (req, res) {
     res.sendFile(__dirname + '/views/join.html');
 });
 
+var allQuestions = [];
+
+function storeQuestions(questions) {
+    allQuestions = questions
+}
+
 io.on('connection', function (socket) {
     console.log('an user connected');
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });
     socket.on('allQuestions', function (questions) {
-        console.log(questions);
+        storeQuestions(questions)
     });
 });
 
