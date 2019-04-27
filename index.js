@@ -33,7 +33,8 @@ io.on('connection', function (socket) {
     socket.on('start', function () {
         questionIndex = 0;
         if (Object.keys(allQuestions).length > questionIndex) {
-            socket.emit('question', allQuestions[questionIndex][0]);
+            io.sockets.emit('question', allQuestions[questionIndex][0]);
+            console.log("emit questions");
         } else {
             // go to end screen
         }

@@ -14,12 +14,16 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on('question', function (msg) {
+            showQuestion(msg);
+            console.log("received");
+        });
     </script>
 
     <!--*****************SIGN IN*********************-->
     <!--TODO: Pass the get-name input to the server to add a user-->
-    <h>This section is the SIGN IN screen</h>
     <div id="sign-in">
+        <h>This section is the SIGN IN screen</h>
         <h>
             Username
         </h>
@@ -36,8 +40,8 @@
 
     <!--*************QUESTIONS***********************-->
     <!-- Questions are displayed, answered, and changed here-->
-    <h>This section is the QUESTION screen</h>
-    <div id="question">
+    <div id="question" style="display: none">
+        <h>This section is the QUESTION screen</h>
         <img>
         <h>Question:</h>
         <!--TODO: Link the generated question here-->
@@ -57,11 +61,13 @@
     <!--*************FINAL STATS/RESULTS***********************-->
     <!--After questions are completed, show stats from a list-->
     <!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
-    <h>This section is the FINAL STATS screen</h>
-    <br>
-    <button onclick="displayEndStats()">Create list</button>
-    <div id="final-stats">
-        <ul></ul>
+    <div id="stats" style="display: none">
+        <h>This section is the FINAL STATS screen</h>
+        <br>
+        <button onclick="displayEndStats()">Create list</button>
+        <div id="final-stats">
+            <ul></ul>
+        </div>
     </div>
 
 </body>

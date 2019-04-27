@@ -2,7 +2,7 @@
 //sends user info to server
 
 //placeholder of users and their score, unordered
-var users=[["dude1",12],["dude2",4],["dude3",0],["chenyu",54]]
+var users = [["dude1", 12], ["dude2", 4], ["dude3", 0], ["chenyu", 54]]
 
 function submitUserInfo() {
     let userName = document.getElementById("sign-in").value;
@@ -33,7 +33,12 @@ function displayEndStats() {
     //orders users, passes them back
     users.sort(sortFunction);
     for (var i = 0; i < users.length; i++) {
-        nameList = "<li>"+users[i]+"<\i>"
-        document.getElementById("final-stats").innerHTML += "<li>"+users[i][0] + " " + users[i][1]+"</li>";
+        nameList = "<li>" + users[i] + "<\i>"
+        document.getElementById("final-stats").innerHTML += "<li>" + users[i][0] + " " + users[i][1] + "</li>";
     }
+}
+
+function showQuestion(question) {
+    document.getElementById("sign-in").style.display = "none";
+    document.getElementById("question").style.display = "block";
 }
