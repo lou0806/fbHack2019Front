@@ -55,7 +55,7 @@ io.on('connection', function (socket) {
         }
     })
     socket.on('answerReveal', function() {
-        io.sockets.emit('answerShow',allQuestions[questionIndex][1][0]);
+        io.sockets.emit('answerShow',allQuestions[questionIndex-1][1][0]);
         console.log("display right answers")
     })
     socket.on('allQuestions', function (questions) {

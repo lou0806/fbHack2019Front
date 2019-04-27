@@ -26,6 +26,7 @@
         }
         function sendAnswer() {
             socket.emit('answerReveal')
+            console.log("answers being sent out")
         }
     </script>
     <script src="/socket.io/socket.io.js"></script>
