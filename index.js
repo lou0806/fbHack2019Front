@@ -10,6 +10,14 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/create', function (req, res) {
+    res.sendFile(__dirname + '/views/create.html');
+});
+
+app.get('/join', function (req, res) {
+    res.sendFile(__dirname + '/views/join.html');
+});
+
 io.on('connection', function (socket) {
     console.log('an user connected');
     socket.on('disconnect', function () {
