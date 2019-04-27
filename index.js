@@ -4,6 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.use('/views', express.static('views'));
+app.use('/public', express.static('public'));
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/views/index.html');
