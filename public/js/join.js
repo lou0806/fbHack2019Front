@@ -37,8 +37,8 @@ function triggerEndStats() {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("ready").style.display = "none";
-    document.getElementById("stats").style.display="block";
-    document.getElementById("final-score").innerHTML=score;
+    document.getElementById("stats").style.display = "block";
+    document.getElementById("final-score").innerHTML = score;
 
 }
 
@@ -56,6 +56,7 @@ function publishStats(a) {
 }
 
 function showQuestion(question) {
+    answered = false;
     document.getElementById("ready").style.display = "none";
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";
