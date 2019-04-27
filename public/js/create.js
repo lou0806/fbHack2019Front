@@ -5,16 +5,6 @@ function submitTopic() {
     // send topic to backend
     const url = 'https://auto-quiz-backend.herokuapp.com/';
 
-    const data = "Jackie Chan";
-
-    // $.post(url, data, function (data, status) {
-    //     console.log('${data} and status is ${status}')
-    // });
-
-    // var xhttp = new XMLHttpRequest();
-    // xhttp.open("POST", url, data);
-    // xhttp.send();
-
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
