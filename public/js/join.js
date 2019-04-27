@@ -35,6 +35,7 @@ function triggerEndStats() {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("stats").style.display = "block";
+    document.getElementById("final-score").style.innerHTML = name;
 }
 
 function sendEndStats() {
@@ -103,7 +104,11 @@ function showQuestion(question) {
 }
 
 function showAnswer(msg) {
-    document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
+    document.getElementById("mc1").disabled = true
+    document.getElementById("mc2").disabled = true
+    document.getElementById("mc3").disabled = true
+    document.getElementById("mc4").disabled = true
+    document.getElementById("correct-answer").innerHTML = "The correct answer is: " + msg;
 }
 
 function checkAnswer(myAnswer, answer, btnID) {
