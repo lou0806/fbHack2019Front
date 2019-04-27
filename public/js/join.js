@@ -60,16 +60,16 @@ function showQuestion(question) {
     let answer = question[1][0];
 
     document.getElementById("mc1").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc1").innerText, answer);
+        checkAnswer(document.getElementById("mc1").innerText, answer, "mc1");
     });
     document.getElementById("mc2").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc2").innerText, answer);
+        checkAnswer(document.getElementById("mc2").innerText, answer, "mc1");
     });
     document.getElementById("mc3").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc3").innerText), answer;
+        checkAnswer(document.getElementById("mc3").innerText, answer, "mc1");
     });
     document.getElementById("mc4").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc4").innerText, answer);
+        checkAnswer(document.getElementById("mc4").innerText, answer, "mc1");
     });
 }
 
@@ -77,7 +77,7 @@ function showAnswer(msg) {
     document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
 }
 
-function checkAnswer(myAnswer, answer) {
+function checkAnswer(myAnswer, answer, btnID) {
     if (answer == myAnswer) {
         console.log("true");
     }
