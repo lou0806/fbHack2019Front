@@ -12,6 +12,8 @@ function submitTopic() {
         topic: topic
     }));
 
+    sendQuestions("questions");
+
     // generate room key
     function makeid(length) {
         var result = '';
