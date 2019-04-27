@@ -1,5 +1,5 @@
 function submitTopic() {
-    let topic = document.getElementById("search-box").value;
+    let topic = document.getElementById("topic").value;
     console.log(topic)
 
     // send topic to backend
