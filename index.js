@@ -19,6 +19,7 @@ app.get('/join', function (req, res) {
 });
 
 var allQuestions = [];
+let questionIndex = 0;
 
 function storeQuestions(questions) {
     allQuestions = questions
@@ -29,10 +30,18 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });
+    socket.on('start', function () {
+        questionIndex = 0;
+        if (Object.keys(allQuestions).length > questionIndex) {
+            socket.emit('question', allQuestions[questionIndex][0]);
+        } else {
+            // go to end screen
+        }
+    })
     socket.on('allQuestions', function (questions) {
         questions = JSON.parse(questions);
         console.log(questions);
-        console.log(questions["0"]);
+        console.log(questions["0"][0]);
         storeQuestions(questions)
     });
 });
