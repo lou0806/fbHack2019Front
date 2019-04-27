@@ -57,17 +57,19 @@ function showQuestion(question) {
     random = random % 4;
     document.getElementById("mc4").innerText = question[1][random];
 
+    let answer = question[1][0];
+
     document.getElementById("mc1").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc1").innerText);
+        checkAnswer(document.getElementById("mc1").innerText, answer);
     });
     document.getElementById("mc2").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc2").innerText);
+        checkAnswer(document.getElementById("mc2").innerText, answer);
     });
     document.getElementById("mc3").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc3").innerText);
+        checkAnswer(document.getElementById("mc3").innerText), answer;
     });
     document.getElementById("mc4").addEventListener("click", function () {
-        checkAnswer(document.getElementById("mc4").innerText);
+        checkAnswer(document.getElementById("mc4").innerText, answer);
     });
 }
 
@@ -75,6 +77,8 @@ function showAnswer(msg) {
     document.getElementById("correct-answer").innerHTML = "The correct answer is:" + msg;
 }
 
-function checkAnswer(answer) {
-    console.log(answer);
+function checkAnswer(myAnswer, answer) {
+    if (answer == myAnswer) {
+        console.log("true");
+    }
 }
