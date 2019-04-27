@@ -3,13 +3,14 @@ function submitTopic() {
     console.log(topic)
 
     // send topic to backend
-    const Http = new XMLHttpRequest();
-    const url = 'https://auto-quiz-backend.herokuapp.com/' + topic;
-    Http.open("GET", url);
-    Http.send();
-    Http.onreadystatechange = (e) => {
-        console.log(Http.responseText)
+    const url = 'https://auto-quiz-backend.herokuapp.com/';
+    const data = {
+        topic: topic
     }
+
+    $.post(url, data, function (data, status) {
+        console.log('${data} and status is ${status}')
+    });
 
     // generate room key
     function makeid(length) {
