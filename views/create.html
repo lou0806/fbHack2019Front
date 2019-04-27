@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Auto Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="main.js"></script>
     <script src="/public/js/create.js"></script>
 </head>
 
@@ -15,15 +16,67 @@
     <script>
         var socket = io();
     </script>
-</body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #bd6218;">
+        <a class="navbar-brand" href="/">AutoQuiz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/create">Create <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/join">Join</a>
+                </li>    
+            </ul>
+        </div>
+    </nav>
+
+<div class="container-fluid d-flex h-100 flex-column">
+    <div class="jumbotron text-center">
+        <h1>
+            Create a Quiz
+        </h1>
+        <p>
+            Generate a quiz from whatever topic you want!
+        </p>
+    </div>
+</div>
+
+<!--
 <div id="topic-input">
-    <h4>Topic</h4>
-    <input id="search-box" />
-    <button onclick="submitTopic()">Submit</button>
+        <h4>Topic</h4>
+        <input id="search-box" />
+        <button onclick="submitTopic()">Submit</button>
+    </div>
+    
+    <div id="show-key">
+        <p></p>
 </div>
+-->
 
-<div id="show-key">
-    <p></p>
+<div class="container-fluid d-flex h-100 flex-column">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <form action="/html/tags/html_form_tag_action.cfm">
+                <fieldset class="form-group">
+                    <h3>
+                        <label for="Topic">Topic Name:</label>
+                    </h3>
+                <input type="text" class="form-control" id="topic" name="Topic">
+                </fieldset>
+                <button type="button" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
+            </form>            
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
 </div>
-
+</body>
 </html>
+
