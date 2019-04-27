@@ -47,12 +47,16 @@ function showQuestion(question) {
 }
 
 function answerReveal() {
-    //TODO: complete
+    //TODO: test
     sendAnswer();
 }
 
+function showAnswer(msg) {
+    document.getElementById("answer").innerHTML = 'The answer is: ' + msg;
+}
+
 function nextQuestion() {
-    //TODO: complete
+    //TODO: test
     sendNext();
 }
 

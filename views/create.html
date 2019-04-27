@@ -39,9 +39,15 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on('answerShow', function(msg) {
+            showAnswer(msg);
+        });
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
         socket.on('go-to-stats', function () {
             goToStats();
-            console.log("received");
         });
     </script>
 
