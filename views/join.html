@@ -55,18 +55,15 @@
         <div class="container-fluid d-flex h-100 flex-column">
             <div class="jumbotron text-center">
                 <h1>
-                    Join a Room
+                    Waiting for host
                 </h1>
-                <p>
-                    Type in the room key to join the quiz!
-                </p>
             </div>
         </div>
         <div class="container-fluid d-flex h-100 flex-column">
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <form action="/html/tags/html_form_tag_action.cfm"></form>
+                    <form action="/html/tags/html_form_tag_action.cfm">
                         <fieldset class="form-group">
                             <label for="user">Username:</label>
                             <input type="text" class="form-control" id="user" name="user">
@@ -79,10 +76,6 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
                     <form action="/html/tags/html_form_tag_action.cfm">
-                        <fieldset class="form-group">
-                            <label for="key">Room Key:</label>
-                            <input type="text" class="form-control" id="key" name="key">
-                        </fieldset>
                         <button type="button" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
                     </form>
                 </div>
@@ -94,7 +87,7 @@
     <div id="question" style="display: none">
         <div class="jumbotron text-center">
             <img>
-            <h1>Question:</h1>
+            <h2>Question:</h2>
             <!--TODO: Link the generated question here-->
             <p id="current-question"></p>
         </div>
