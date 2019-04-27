@@ -1,9 +1,14 @@
 {
     "name": "socket-chat-example",
     "version": "0.0.1",
-    "description": "my first socket.io app",
+    "description": "quiz app",
+    "main": "index.js",
     "scripts": {
         "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
     },
     "dependencies": {
         "ajax": "0.0.4",
