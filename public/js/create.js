@@ -47,10 +47,15 @@ function showQuestion(question) {
 
 function answerReveal() {
     //TODO: complete
-    document.getElementById("answer").innerHTML = "placeholder text that would otherwise show the answer";
+    sendAnswer();
 }
 
 function nextQuestion() {
     //TODO: complete
     sendNext();
+}
+
+// Opens the END STATS BAR
+function goToStats() {
+    //TODO: Complete
 }

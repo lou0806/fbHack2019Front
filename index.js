@@ -54,6 +54,10 @@ io.on('connection', function (socket) {
             console.log("go to stats screen");
         }
     })
+    socket.on('answerReveal', function() {
+        io.sockets.emit('answerShow',allQuestions[questionIndex][1][0]);
+        console.log("display right answers")
+    })
     socket.on('allQuestions', function (questions) {
         questions = JSON.parse(questions);
         console.log(questions);
