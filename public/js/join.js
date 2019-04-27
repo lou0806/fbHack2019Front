@@ -53,6 +53,10 @@ function showQuestion(question) {
     document.getElementById("question").style.display = "block";
     document.getElementById("current-question").innerText = question[0];
     document.getElementById("correct-answer").innerHTML = "";
+    document.getElementById("mc1").disabled = false
+    document.getElementById("mc2").disabled = false
+    document.getElementById("mc3").disabled = false
+    document.getElementById("mc4").disabled = false
     var min = 0;
     var max = 4;
     var random = Math.floor(Math.random() * (+max - +min)) + +min;
@@ -71,15 +75,27 @@ function showQuestion(question) {
 
     document.getElementById("mc1").addEventListener("click", function () {
         checkAnswer(document.getElementById("mc1").innerText, answer, "mc1");
+        document.getElementById("mc2").disabled = true
+        document.getElementById("mc3").disabled = true
+        document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc2").addEventListener("click", function () {
         checkAnswer(document.getElementById("mc2").innerText, answer, "mc1");
+        document.getElementById("mc1").disabled = true
+        document.getElementById("mc3").disabled = true
+        document.getElementById("mc4").disabled = true
     });
     document.getElementById("mc3").addEventListener("click", function () {
         checkAnswer(document.getElementById("mc3").innerText, answer, "mc1");
+        document.getElementById("mc2").disabled = true
+        document.getElementById("mc1").disabled = true
+        document.getElementById("mc4").disabled = true 
     });
     document.getElementById("mc4").addEventListener("click", function () {
         checkAnswer(document.getElementById("mc4").innerText, answer, "mc1");
+        document.getElementById("mc2").disabled = true
+        document.getElementById("mc3").disabled = true
+        document.getElementById("mc1").disabled = true    
     });
 }
 
@@ -90,5 +106,8 @@ function showAnswer(msg) {
 function checkAnswer(myAnswer, answer, btnID) {
     if (answer == myAnswer) {
         score++;
+    }
+    else {
+        console.log("false")
     }
 }
