@@ -30,6 +30,9 @@ io.on('connection', function (socket) {
         console.log('user disconnected');
     });
     socket.on('allQuestions', function (questions) {
+        questions = JSON.parse(questions);
+        console.log(questions);
+        console.log(questions["0"]);
         storeQuestions(questions)
     });
 });
