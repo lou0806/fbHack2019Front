@@ -65,6 +65,15 @@ io.on('connection', function (socket) {
         console.log(questions["0"][0]);
         storeQuestions(questions)
     });
+    users = [];
+    socket.on('userScore', function(arrUser) {
+        console.log("qniorqwnioerqwnio")
+        users.push(arrUser);
+        console.log(arrUser);
+    })
+    socket.on('publishScores',function(){
+        io.sockets.emit('publishedScores',users);
+    })
 });
 
 http.listen(port, function () {
