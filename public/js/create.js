@@ -52,5 +52,5 @@ function answerReveal() {
 
 function nextQuestion() {
     //TODO: complete
-    sendStart();
+    sendNext();
 }
