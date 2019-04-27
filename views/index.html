@@ -2,21 +2,82 @@
 <html>
 
 <head>
-
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Auto Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary btn-lg" onclick="window.location='/create';">Create</button>
-    <button type="button" class="btn btn-primary btn-lg" onclick="window.location='/join';">Join</button>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #bd6218;">
+        <a class="navbar-brand" href="#">AutoQuiz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Join</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid d-flex h-100 flex-column">
+        <div class="jumbotron text-center">
+            <h2>
+                Welcome to AutoQuiz!
+            </h2>
+            <p>
+                Use the buttons below to create a quiz or join a quiz room!
+            </p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-3">
+                <button type="button" onclick="window.location='/create';" class="btn btn-block btn-lg" style="background-color: coral">Create</button>
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-3">
+                <h1>
+                    <button type="button" onclick="window.location='/join';" class="btn btn-block btn-lg" style="background-color: coral">Join</button>
+                </h1>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
