@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Auto Quiz</title>
+    <title>Auto Quiz User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="/public/js/join.js"></script>
@@ -17,8 +17,9 @@
     </script>
 </body>
 
-
+<!--*****************SIGN IN*********************-->
 <!--TODO: Pass the get-name input to the server to add a user-->
+<h>This section is the SIGN IN screen</h>
 <div id = "sign-in">
     <h>
         Username
@@ -34,12 +35,11 @@
     <p id = "check-connect"></p>
 </div>
 
+<!--*************QUESTIONS***********************-->
+<!-- Questions are displayed, answered, and changed here-->
+<h>This section is the QUESTION screen</h>
 <div id = "question">
-    <p>This div tag is the QUESTION screen</p>
-    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/World_Premiere_Logan_Berlinale_2017.jpg/220px-World_Premiere_Logan_Berlinale_2017.jpg">
-    <p>PLACEHOLDER</p>
-
-    <br>
+    <img>
     <h>Question:</h>
     <!--TODO: Link the generated question here-->
     <p></p>
@@ -58,17 +58,14 @@
     <p id = "answer-stats"></p>
 </div>
 
+<!--*************FINAL STATS/RESULTS***********************-->
 <!--After questions are completed, show stats from a list-->
+<!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
+<h>This section is the FINAL STATS screen</h>
+<br>
+<button onclick="displayEndStats()">Create list</button>
 <div id = "final-stats">
-    <ol id = "list-of-score">
-        <!--Want something like <li *ngFor="let user of users">, users being list of users with corresponding score-->
-        <li *ngFor="let user of users">
-            <p class = "user-name">
-                {{user}}
-            </p>
-            <p class = "user-score"></p>
-        </li>
-    </ol>
+    <ul></ul>
 </div>
 
 </html>
