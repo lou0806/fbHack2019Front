@@ -3,6 +3,7 @@
 
 //placeholder of users and their score, unordered
 var users = [["dude1", 12], ["dude2", 4], ["dude3", 0], ["chenyu", 54]]
+var score = 0;
 
 function submitUserInfo() {
     let userName = document.getElementById("sign-in").value;
@@ -80,5 +81,6 @@ function showAnswer(msg) {
 function checkAnswer(myAnswer, answer, btnID) {
     if (answer == myAnswer) {
         console.log("true");
+        score++;
     }
 }
