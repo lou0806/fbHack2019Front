@@ -65,6 +65,6 @@ function nextQuestion() {
 function goToStats() {
     //TODO: test
     document.getElementById("create-home").style.display = "none";
-    document.getElementById("follow-question").style.display = "none";
+    document.getElementById("hide-this").style.display = "none";
     document.getElementById("stats").style.display="block";
 }
