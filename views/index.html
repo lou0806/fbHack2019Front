@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Auto Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <script src="main.js"></script>
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -48,17 +49,13 @@
             <div class="col-sm-2">
             </div>
             <div class="col-sm-3">
-                <button type="button" class="btn btn-block btn-lg" style="background-color: coral">
-                    <a class="nav-link" href="/create">Create</a>
-                </button>
+                <button type="button" onclick="window.location='/create';" class="btn btn-block btn-lg" style="background-color: coral">Create</button>
             </div>
             <div class="col-sm-2">
             </div>
             <div class="col-sm-3">
                 <h1>
-                    <button type="button" class="btn btn-block btn-lg" style="background-color: coral">
-                        <a class="nav-link" href="/join">Join</a>
-                    </button>
+                    <button type="button" onclick="window.location='/join';" class="btn btn-block btn-lg" style="background-color: coral">Join</button>
                 </h1>
             </div>
             <div class="col-sm-2">
@@ -71,4 +68,5 @@
         var socket = io();
     </script>
 </body>
+
 </html>

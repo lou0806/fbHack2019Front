@@ -4,16 +4,20 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Auto Quiz</title>
+    <title>Auto Quiz User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <script src="main.js"></script>
-    <script src="main.js"></script>
+    <script src="/public/js/join.js"></script>
 </head>
 
 <body>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on('question', function (msg) {
+            showQuestion(msg);
+            console.log("received");
+        });
     </script>
 
 <body>
@@ -82,5 +86,57 @@
 </h>
 <input id="key-input"/>
 <button>Submit</button>
+
+    <!--*****************SIGN IN*********************-->
+    <!--TODO: Pass the get-name input to the server to add a user-->
+    <div id="sign-in">
+        <h>This section is the SIGN IN screen</h>
+        <h>
+            Username
+        </h>
+        <input id="get-name" />
+        <h>
+            Enter Key
+        </h>
+        <input id="key-input" />
+        <button>Submit</button>
+
+        <!--Show 'connected' when connected to a quiz-->
+        <p id="check-connect"></p>
+    </div>
+
+    <!--*************QUESTIONS***********************-->
+    <!-- Questions are displayed, answered, and changed here-->
+    <div id="question" style="display: none">
+        <h>This section is the QUESTION screen</h>
+        <img>
+        <h>Question:</h>
+        <!--TODO: Link the generated question here-->
+        <p></p>
+
+        <h>Answer</h>
+        <!--TODO: Link the answer. After timer runs out OR everyone has submitted, display answer-->
+        <input id="answer-input">
+        <button>Submit</button>
+        <!--Answer: shows correct answer after timer runs out-->
+        <p id="correct-answer"></p>
+
+        <!--Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
+        <!-- <p id="answer-stats"></p> -->
+    </div>
+
+    <!--*************FINAL STATS/RESULTS***********************-->
+    <!--After questions are completed, show stats from a list-->
+    <!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
+    <div id="stats" style="display: none">
+        <h>This section is the FINAL STATS screen</h>
+        <br>
+        <button onclick="displayEndStats()">Create list</button>
+        <div id="final-stats">
+            <ul></ul>
+        </div>
+    </div>
+
+</body>
 
 <p id = "check-connect"></p> -->
