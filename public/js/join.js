@@ -8,6 +8,8 @@ var name = "anonymous";
 
 function submitUserInfo() {
     name = document.getElementById("user").value;
+    document.getElementById("sign-in").style.display = "none";
+    document.getElementById("ready").style.display = "block";
 
     //send userName to server TODO
 
@@ -33,8 +35,10 @@ function sortFunction(a, b) {
 function triggerEndStats(){
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
+    document.getElementById("ready").style.display = "none";
     document.getElementById("stats").style.display="block";
-    document.getElementById("final-score").style.innerHTML=name;
+    document.getElementById("final-score").innerHTML=score;
+
 }
 
 function sendEndStats() {
@@ -50,6 +54,7 @@ function publishStats(a) {
 }
 
 function showQuestion(question) {
+    document.getElementById("ready").style.display = "none";
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";
     document.getElementById("current-question").innerText = question[0];
