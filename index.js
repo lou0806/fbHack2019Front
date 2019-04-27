@@ -64,6 +64,11 @@ io.on('connection', function (socket) {
         console.log(questions["0"][0]);
         storeQuestions(questions)
     });
+    socket.on('userScore', function(arrUser) {
+        users = [];
+        users.push(arrUser);
+        console.log(arrUser);
+    })
 });
 
 http.listen(3000, function () {

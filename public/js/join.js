@@ -38,6 +38,17 @@ function displayEndStats() {
     }
 }
 
+var placeHolderScore = 23;
+
+function sendEndStats() {
+    document.getElementById("sign-in").style.display = "none";
+    document.getElementById("question").style.display = "none";
+    document.getElementById("stats").style.display="block";
+    name = document.getElementById("user").innerText;
+    score = placeHolderScore;
+    socket.emit('userScore', [name,score]);
+}
+
 function showQuestion(question) {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "block";

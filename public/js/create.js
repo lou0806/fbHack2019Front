@@ -63,5 +63,8 @@ function nextQuestion() {
 
 // Opens the END STATS BAR
 function goToStats() {
-    //TODO: Complete
+    //TODO: test
+    document.getElementById("create-home").style.display = "none";
+    document.getElementById("follow-question").style.display = "none";
+    document.getElementById("stat").style.display="none"
 }
