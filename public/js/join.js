@@ -11,7 +11,7 @@ function submitUserInfo() {
     name = document.getElementById("user").value;
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("ready").style.display = "block";
-
+    document.getElementById("name").innerHTML = name;
     //send userName to server TODO
 
 }
@@ -36,18 +36,14 @@ function sortFunction(a, b) {
 function triggerEndStats() {
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
-<<<<<<< HEAD
     document.getElementById("ready").style.display = "none";
     document.getElementById("stats").style.display="block";
     document.getElementById("final-score").innerHTML=score;
 
-=======
-    document.getElementById("final-score").innerHTML = "Your score is " + score.toString() + ". Good job!";
-    document.getElementById("stats").style.display = "block";
->>>>>>> 66210724fb5f9c21eb0601de0f3c9c6218456ea3
 }
 
 function sendEndStats() {
+    document.getElementById("buttonstats").disabled = true;
     emitStat(name, score);
 }
 
