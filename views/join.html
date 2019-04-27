@@ -58,9 +58,19 @@
         <div class="col-sm-6">
             <form action="/html/tags/html_form_tag_action.cfm">
                 <fieldset class="form-group">
-                <h3>
-                    <label for="key">Room Key:</label>
-                </h3>
+                <label for="user">Username:</label>
+                <input type="text" class="form-control" id="user" name="user">
+                </fieldset>
+            </form>            
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <form action="/html/tags/html_form_tag_action.cfm">
+                <fieldset class="form-group">
+                <label for="key">Room Key:</label>
                 <input type="text" class="form-control" id="key" name="key">
                 </fieldset>
                 <button type="button" class="btn btn-block btn-lg" style="background-color: coral">Submit</button>
@@ -68,9 +78,11 @@
         </div>
         <div class="col-sm-3"></div>
     </div>
+
 </div>
 </body>
 </html>
+
 
 <!--
 <div>
