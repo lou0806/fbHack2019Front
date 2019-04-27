@@ -29,15 +29,6 @@ function sortFunction(a, b) {
     }
 }
 
-function displayEndStats() {
-    //orders users, passes them back
-    users.sort(sortFunction);
-    for (var i = 0; i < users.length; i++) {
-        nameList = "<li>" + users[i] + "<\i>"
-        document.getElementById("final-stats").innerHTML += "<li>" + users[i][0] + " " + users[i][1] + "</li>";
-    }
-}
-
 var placeHolderScore = 23;
 
 function sendEndStats() {
@@ -47,6 +38,14 @@ function sendEndStats() {
     name = document.getElementById("user").innerText;
     score = placeHolderScore;
     socket.emit('userScore', [name,score]);
+}
+
+function publishStats(a) {
+    b = a.sort(sortFunction)
+    for (var i = 0; i < users.length; i++) {
+        nameList = "<li>" + users[i] + "<\i>"
+        document.getElementById("final-list").innerHTML += "<li>" + users[i][0] + " " + users[i][1] + "</li>";
+    }
 }
 
 function showQuestion(question) {

@@ -16,6 +16,13 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
+        socket.on('publishedScores', function (userArray) {
+            publishStats(userArray);
+        });
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
         socket.on('question', function (msg) {
             showQuestion(msg);
         });
@@ -140,12 +147,15 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
     <div id="stats" style="display: none">
         <h>This section is the FINAL STATS screen</h>
         <br>
-        <input id="name">
         <p id="final-score"></p>
-        <button onclick="sendEndStats()">Send your score and names</button>
+        <button onclick="sendEndStats()">Send your score</button>
+
+        <div id="final-list">
+            <ul></ul>
     </div>
 </body>
 
