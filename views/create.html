@@ -15,18 +15,18 @@
     <script>
         var socket = io();
     </script>
+
+    <div id="topic-input">
+        <h4>Topic</h4>
+        <input id="search-box" />
+        <button onclick="submitTopic()">Submit</button>
+    </div>
+
+    <!--TODO: Show the key when topic is submitted-->
+    <p id="show-key"></p>
+
+    <!--Button for creator to start the quiz-->
+    <button>Start!</button>
 </body>
-
-<div id="topic-input">
-    <h4>Topic</h4>
-    <input id="search-box" />
-    <button onclick="submitTopic()">Submit</button>
-</div>
-
-<!--TODO: Show the key when topic is submitted-->
-<p id = "show-key"></p>
-
-<!--Button for creator to start the quiz-->
-<button>Start!</button>
 
 </html>

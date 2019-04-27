@@ -15,57 +15,58 @@
     <script>
         var socket = io();
     </script>
+
+    <!--*****************SIGN IN*********************-->
+    <!--TODO: Pass the get-name input to the server to add a user-->
+    <h>This section is the SIGN IN screen</h>
+    <div id="sign-in">
+        <h>
+            Username
+        </h>
+        <input id="get-name" />
+        <h>
+            Enter Key
+        </h>
+        <input id="key-input" />
+        <button>Submit</button>
+
+        <!--Show 'connected' when connected to a quiz-->
+        <p id="check-connect"></p>
+    </div>
+
+    <!--*************QUESTIONS***********************-->
+    <!-- Questions are displayed, answered, and changed here-->
+    <h>This section is the QUESTION screen</h>
+    <div id="question">
+        <img>
+        <h>Question:</h>
+        <!--TODO: Link the generated question here-->
+        <p></p>
+
+        <h>Answer</h>
+        <!--TODO: Link the answer. After timer runs out OR everyone has submitted, display answer-->
+        <input id="answer-input">
+        <button>Submit</button>
+        <!--Answer: shows correct answer after timer runs out-->
+        <p id="correct-answer"></p>
+
+        <!--Timer, TODO: implement js stuff for the timer. When runs out, triggers end of the question-->
+        <p id="question-timer"></p>
+
+        <!--Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
+        <p id="answer-stats"></p>
+    </div>
+
+    <!--*************FINAL STATS/RESULTS***********************-->
+    <!--After questions are completed, show stats from a list-->
+    <!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
+    <h>This section is the FINAL STATS screen</h>
+    <br>
+    <button onclick="displayEndStats()">Create list</button>
+    <div id="final-stats">
+        <ul></ul>
+    </div>
+
 </body>
-
-<!--*****************SIGN IN*********************-->
-<!--TODO: Pass the get-name input to the server to add a user-->
-<h>This section is the SIGN IN screen</h>
-<div id = "sign-in">
-    <h>
-        Username
-    </h>
-    <input id="get-name"/>
-    <h>
-        Enter Key
-    </h>
-    <input id="key-input"/>
-    <button>Submit</button>
-
-    <!--Show 'connected' when connected to a quiz-->
-    <p id = "check-connect"></p>
-</div>
-
-<!--*************QUESTIONS***********************-->
-<!-- Questions are displayed, answered, and changed here-->
-<h>This section is the QUESTION screen</h>
-<div id = "question">
-    <img>
-    <h>Question:</h>
-    <!--TODO: Link the generated question here-->
-    <p></p>
-
-    <h>Answer</h>
-    <!--TODO: Link the answer. After timer runs out OR everyone has submitted, display answer-->
-    <input id = "answer-input">
-    <button>Submit</button>
-    <!--Answer: shows correct answer after timer runs out-->
-    <p id = "correct-answer"></p>
-
-    <!--Timer, TODO: implement js stuff for the timer. When runs out, triggers end of the question-->
-    <p id = "question-timer"></p>
-
-    <!--Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
-    <p id = "answer-stats"></p>
-</div>
-
-<!--*************FINAL STATS/RESULTS***********************-->
-<!--After questions are completed, show stats from a list-->
-<!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
-<h>This section is the FINAL STATS screen</h>
-<br>
-<button onclick="displayEndStats()">Create list</button>
-<div id = "final-stats">
-    <ul></ul>
-</div>
 
 </html>
