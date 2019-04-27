@@ -4,10 +4,11 @@
 //placeholder of users and their score, unordered
 var users = [["dude1", 12], ["dude2", 4], ["dude3", 0], ["chenyu", 54]]
 var score = 0;
+var name = "anonymous";
 
 function submitUserInfo() {
-    let userName = document.getElementById("sign-in").value;
-    console.log(userName)
+    name = document.getElementById("user").value;
+    console.log(name);
 
     //send userName to server TODO
 
