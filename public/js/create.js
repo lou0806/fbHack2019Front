@@ -1,5 +1,5 @@
 function submitTopic() {
-    let topic = document.getElementById("search-box").value;
+    let topic = document.getElementById("topic").value;
     console.log(topic)
 
     // send topic to backend
@@ -41,7 +41,8 @@ function startQuiz() {
 function showQuestion(question) {
     document.getElementById("create-home").style.display = "none";
     document.getElementById("follow-question").style.display = "block";
-    //TODO: complete
+    //TODO: TEST
+    document.getElementById("current-question").innerHTML = question;
 }
 
 function answerReveal() {
@@ -51,4 +52,5 @@ function answerReveal() {
 
 function nextQuestion() {
     //TODO: complete
+    sendStart();
 }
