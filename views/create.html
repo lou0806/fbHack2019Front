@@ -24,6 +24,9 @@
         function sendNext() {
             socket.emit('next');
         }
+        function sendAnswer() {
+            socket.emit('answerReveal')
+        }
     </script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -36,8 +39,8 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
-        socket.on('go-to-stats', function (msg) {
-            showQuestion(msg);
+        socket.on('go-to-stats', function () {
+            goToStats();
             console.log("received");
         });
     </script>
@@ -89,6 +92,7 @@
 </div>
 -->
 
+<<<<<<< HEAD
     <div id="create-home" class="container-fluid d-flex h-100 flex-column">
         <div class="row" id="topic-input">
             <div class="col-sm-3"></div>
@@ -102,44 +106,64 @@
                     </fieldset>
                     <button type="button" class="btn btn-block btn-lg" style="background-color: coral" onclick="submitTopic()">Submit</button>
                 </form>
+=======
+    <div id="input_topic">
+        <div id="create-home" class="container-fluid d-flex h-100 flex-column">
+            <div class="row" id="topic-input">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form action="submitTopic()">
+                        <fieldset class="form-group">
+                            <h3>
+                                <label for="Topic">Topic Name:</label>
+                            </h3>
+                            <input id="topic" type="text" class="form-control" name="Topic">
+                        </fieldset>
+                        <button type="button" class="btn btn-block btn-lg" style="background-color: coral" onclick="submitTopic()">Submit</button>
+                    </form>
+                </div>
+>>>>>>> 4b2779de96aaba0d46d15f20f01ced98be9796d2
             </div>
-        </div>
-        <br>
-        <div class = "row">
-            <!--TODO: Show the key when topic is submitted-->
-            <p id="show-key"></p>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <button onclick="startQuiz()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Start!</button>
+            <br>
+            <div class="row">
+                <!--TODO: Show the key when topic is submitted-->
+                <p id="show-key"></p>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <button onclick="startQuiz()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Start!</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="follow-question" style="display:none !important"  class="container-fluid d-flex h-100 flex-column">
+    <div id="follow-question" style="display:none !important" class="container-fluid d-flex h-100 flex-column">
         <!--style="display: none" TODO: add this to above div later-->
 
-        <p id="question">Showing the question</p>
-        
-        <div class = "row">
+        <p id="current-question"></p>
+        <p id="answer"></p>
+
+        <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>
             </div>
         </div>
         <br>
-        <div class = "row">
+        <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <button id="next-q" onclick="nextQuestion()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Next!</button>
             </div>
         </div>
-        <p id="current-question"></p>
-        <p id="answer"></p>
     </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
 <!--
 <div id="create-home">

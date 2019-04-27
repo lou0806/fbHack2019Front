@@ -20,6 +20,12 @@
             showQuestion(msg);
         });
     </script>
+    <script>
+        var socket = io();
+        socket.on('answerShow', function (ans) {
+            showAnswer(ans);
+        });
+    </script>
 
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #bd6218;">
         <a class="navbar-brand" href="/">AutoQuiz</a>
@@ -85,6 +91,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
 <div id="question" style="display: none">
     <div class = "jumbotron text-center">
         <img>
@@ -133,6 +140,27 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+=======
+    <div id="question" style="display: none">
+        <img>
+        <h>Question:</h>
+        <!--TODO: Link the generated question here-->
+        <p id="current-question"></p>
+        <h>Answer</h>
+        <input id="answer-input">
+        <button>Submit</button>
+        <!--Answer: shows correct answer after timer runs out-->
+        <p id="correct-answer"></p>
+        <!--Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
+        <p id="answer-stats"></p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+>>>>>>> 4b2779de96aaba0d46d15f20f01ced98be9796d2
 </body>
 
 </html>
@@ -182,7 +210,7 @@
         <img>
         <h>Question:</h>
         <!-TODO: Link the generated question here-->
-    <!--
+<!--
         <p id = "current-question"></p>
 
         <h>Answer</h>
@@ -191,7 +219,7 @@
         <input id="answer-input">
         <button>Submit</button>
         <!-Answer: shows correct answer after timer runs out-->
-        <!--
+<!--
         <p id="correct-answer"></p>
 
         <!-Stats: Show after timer runs our OR everyone has submitted, display the answer and number of people who got it right-->
@@ -199,9 +227,9 @@
 <!--</div>
 
     <!-*************FINAL STATS/RESULTS***********************-->
-    <!--After questions are completed, show stats from a list-->
-    <!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
-    <!--
+<!--After questions are completed, show stats from a list-->
+<!--Below is PLACEHOLDER, list is generated from hardcoded list and activated by the button-->
+<!--
     <div id="stats" style="display: none">
         <h>This section is the FINAL STATS screen</h>
         <br>
