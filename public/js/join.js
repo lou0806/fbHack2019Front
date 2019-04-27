@@ -34,6 +34,7 @@ function triggerEndStats(){
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("stats").style.display="block";
+    document.getElementById("final-score").style.innerHTML=name;
 }
 
 function sendEndStats() {
