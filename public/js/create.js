@@ -33,3 +33,7 @@ function submitTopic() {
 
     console.log(makeid(4));
 }
+
+function startQuiz() {
+    sendStart();
+}

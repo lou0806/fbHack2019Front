@@ -17,6 +17,9 @@
         function sendQuestions(questions) {
             socket.emit('allQuestions', questions);
         }
+        function sendStart() {
+            socket.emit('start');
+        }
     </script>
 
     <div id="topic-input">
@@ -29,7 +32,7 @@
     <p id="show-key"></p>
 
     <!--Button for creator to start the quiz-->
-    <button>Start!</button>
+    <button onclick="startQuiz()">Start!</button>
 </body>
 
 </html>
