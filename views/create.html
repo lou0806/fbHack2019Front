@@ -22,6 +22,15 @@
             socket.emit('start');
         }
     </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+        socket.on('question', function (msg) {
+            showQuestion(msg);
+            console.log("received");
+        });
+    </script>
+
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="background-color: #bd6218;">
         <a class="navbar-brand" href="/">AutoQuiz</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -82,7 +91,7 @@
                     </fieldset>
                     <button type="button" class="btn btn-block btn-lg" style="background-color: coral" onclick="submitTopic()">Submit</button>
                 </form>
-            </div>    
+            </div>
         </div>
         <br>
         <div class = "row">
@@ -92,20 +101,11 @@
             <div class="col-sm-6">
                 <button onclick="startQuiz()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Start!</button>
             </div>
-            <div class="col-sm-3"></div>
         </div>
     </div>
 
-    <div class="container-fluid d-flex h-100 flex-column" id="follow-question" style="display: none">
+    <div style="display:none !important"  class="container-fluid d-flex h-100 flex-column" id="follow-question">
         <!--style="display: none" TODO: add this to above div later-->
-        <script src="/socket.io/socket.io.js"></script>
-        <script>
-            var socket = io();
-            socket.on('question', function (msg) {
-                showQuestion(msg);
-                console.log("received");
-            });
-        </script>
 
         <p id="question">Showing the question</p>
         
@@ -116,7 +116,6 @@
             <div class="col-sm-6">
                 <button id="answer-reveal" onclick="answerReveal()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Reveal Answer</button>
             </div>
-            <div class="col-sm-3"></div>
         </div>
         <br>
         <div class = "row">
@@ -126,7 +125,6 @@
             <div class="col-sm-6">
                 <button id="next-q" onclick="nextQuestion()" type="button" class="btn btn-block btn-lg" style="background-color: coral">Next!</button>
             </div>
-            <div class="col-sm-3"></div>
         </div>
         <p id="current-question"></p>
         <p id="answer"></p>
