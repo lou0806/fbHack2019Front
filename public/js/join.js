@@ -8,7 +8,6 @@ var name = "anonymous";
 
 function submitUserInfo() {
     name = document.getElementById("user").value;
-    console.log(name);
 
     //send userName to server TODO
 
