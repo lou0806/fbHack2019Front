@@ -24,6 +24,9 @@
         function sendNext() {
             socket.emit('next');
         }
+        function sendAnswer() {
+            socket.emit('answerReveal')
+        }
     </script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -36,8 +39,8 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
-        socket.on('go-to-stats', function (msg) {
-            showQuestion(msg);
+        socket.on('go-to-stats', function () {
+            goToStats();
             console.log("received");
         });
     </script>

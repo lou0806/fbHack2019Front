@@ -43,3 +43,7 @@ function showQuestion(question) {
     document.getElementById("question").style.display = "block";
     document.getElementById("current-question").innerText = question;
 }
+
+function showAnswer(msg) { 
+    document.getElementById("correct-input").innerHTML="The correct answer is:" + msg;
+}
