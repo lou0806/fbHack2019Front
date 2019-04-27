@@ -66,6 +66,7 @@ io.on('connection', function (socket) {
     });
     users = [];
     socket.on('userScore', function(arrUser) {
+        console.log("qniorqwnioerqwnio")
         users.push(arrUser);
         console.log(arrUser);
     })

@@ -30,15 +30,14 @@ function sortFunction(a, b) {
     }
 }
 
-var placeHolderScore = 23;
-
-function sendEndStats() {
+function triggerEndStats(){
     document.getElementById("sign-in").style.display = "none";
     document.getElementById("question").style.display = "none";
     document.getElementById("stats").style.display="block";
-    name = document.getElementById("user").innerText;
-    score = placeHolderScore;
-    socket.emit('userScore', [name,score]);
+}
+
+function sendEndStats() {
+    emitStat(name,score);
 }
 
 function publishStats(a) {

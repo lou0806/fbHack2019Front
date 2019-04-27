@@ -19,6 +19,9 @@
         socket.on('publishedScores', function (userArray) {
             publishStats(userArray);
         });
+        function emitStat(name, score){
+            socket.emit('userScore', [name,score]);
+        }
     </script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -31,6 +34,12 @@
         var socket = io();
         socket.on('answerShow', function (ans) {
             showAnswer(ans);
+        });
+    </script>
+    <script>
+        var socket = io();
+        socket.on('go-to-stats', function() {
+            triggerEndStats()
         });
     </script>
 
@@ -95,10 +104,7 @@
         <div class="jumbotron text-center">
             <img>
             <h2>Question:</h2>
-<<<<<<< HEAD
-=======
             <!--TODO: Link the generated question here-->
->>>>>>> c020091306e0e7c8991992f018314123cf0a15c0
             <p id="current-question"></p>
         </div>
         <div class="container-fluid d-flex h-100 flex-column">
@@ -150,7 +156,6 @@
         <br>
         <p id="final-score"></p>
         <button onclick="sendEndStats()">Send your score</button>
-
         <div id="final-list">
             <ul></ul>
     </div>
